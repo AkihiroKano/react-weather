@@ -163,7 +163,7 @@ const AppShell = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-white via-blue-500 to-purple-600 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transition-colors duration-300">
+        <div className="min-h-screen bg-gradient-to-br from-blue-300 via-blue-500 to-purple-700 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transition-colors duration-300">
             <div className="container mx-auto px-4 py-6">
                 <Header onHistoryClick={() => setIsHistoryOpen(true)} />
 
