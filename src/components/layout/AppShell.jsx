@@ -163,23 +163,18 @@ const AppShell = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-300 via-blue-500 to-purple-700 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transition-colors duration-300">
-            <div className="container mx-auto px-4 py-6">
-                <Header onHistoryClick={() => setIsHistoryOpen(true)} />
+        <div className="min-h-screen bg-gradient-to-br from-orange-500 via-indigo-500 to-violet-500 dark:from-gray-900 dark:via-blue-950 dark:to-violet-900 text-white transition-colors duration-500">            <div className="container mx-auto px-4 py-6">
+            <Header onHistoryClick={() => setIsHistoryOpen(true)} />
 
-                <main className="mt-6 space-y-6">
-                    <SearchBar
-                        onSelectCity={handleLocationSelect}
-                        onGeolocate={handleGeolocate}
-                    />
+            <main className="mt-6 space-y-6">
+                <SearchBar
+                    onSelectCity={handleLocationSelect}
+                    onGeolocate={handleGeolocate}
+                />
 
-                    {renderContent()}
-                </main>
-
-                <footer className="mt-8 text-center text-sm text-white/60">
-                    {t('appName')} • {new Date().getFullYear()}
-                </footer>
-            </div>
+                {renderContent()}
+            </main>
+        </div>
 
             <HistoryDrawer
                 isOpen={isHistoryOpen}

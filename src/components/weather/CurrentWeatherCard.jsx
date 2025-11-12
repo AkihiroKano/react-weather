@@ -1,9 +1,6 @@
-import { useLanguage } from "../../contexts/LanguageContext.jsx";
-import { useUnits } from "../../contexts/UnitsContext.jsx";
-import {
-    formatTemperature,
-    getWeatherIconUrl,
-} from "../../utils/formatters.js";
+import { useLanguage } from '../../contexts/LanguageContext.jsx';
+import { useUnits } from '../../contexts/UnitsContext.jsx';
+import { formatTemperature, getWeatherIconUrl } from '../../utils/formatters.js';
 
 const CurrentWeatherCard = ({ data }) => {
     const { t } = useLanguage();
@@ -23,7 +20,7 @@ const CurrentWeatherCard = ({ data }) => {
                         {weatherInfo.description}
                     </div>
                     <div className="text-lg text-white/60 mt-1">
-                        {t("feelsLike")}{" "}
+                        {t('feelsLike')}{' '}
                         {formatTemperature(main.feels_like, units)}
                     </div>
                 </div>

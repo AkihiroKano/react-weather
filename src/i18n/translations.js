@@ -1,7 +1,7 @@
 export const translations = {
     en: {
         // Common
-        appName: 'React Weather',
+        appName: 'Weather',
         loading: 'Loading...',
         error: 'Error',
         retry: 'Retry',

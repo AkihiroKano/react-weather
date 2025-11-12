@@ -1,5 +1,5 @@
-import { useLanguage } from "../../contexts/LanguageContext.jsx";
-import { getAqiLevel } from "../../utils/formatters.js";
+import { useLanguage } from '../../contexts/LanguageContext.jsx';
+import { getAqiLevel } from '../../utils/formatters.js';
 
 const AQICard = ({ data }) => {
     const { t } = useLanguage();
@@ -13,24 +13,24 @@ const AQICard = ({ data }) => {
     const components = airData.components;
 
     const aqiInfo = getAqiLevel(aqi);
-    const aqiText = t("aqiLevels")[aqi];
+    const aqiText = t('aqiLevels')[aqi];
 
     const componentList = [
-        { name: "PM2.5", value: components.pm2_5, unit: "μg/m³" },
-        { name: "PM10", value: components.pm10, unit: "μg/m³" },
-        { name: "NO₂", value: components.no2, unit: "μg/m³" },
-        { name: "O₃", value: components.o3, unit: "μg/m³" },
-        { name: "SO₂", value: components.so2, unit: "μg/m³" },
-        { name: "CO", value: components.co, unit: "mg/m³" },
+        { name: 'PM2.5', value: components.pm2_5, unit: 'μg/m³' },
+        { name: 'PM10', value: components.pm10, unit: 'μg/m³' },
+        { name: 'NO₂', value: components.no2, unit: 'μg/m³' },
+        { name: 'O₃', value: components.o3, unit: 'μg/m³' },
+        { name: 'SO₂', value: components.so2, unit: 'μg/m³' },
+        { name: 'CO', value: components.co, unit: 'mg/m³' },
     ];
 
     const getAqiColor = (level) => {
         const colors = {
-            1: "from-green-500 to-green-400",
-            2: "from-yellow-500 to-yellow-400",
-            3: "from-orange-500 to-orange-400",
-            4: "from-red-500 to-red-400",
-            5: "from-purple-500 to-purple-400",
+            1: 'from-green-500 to-green-400',
+            2: 'from-yellow-500 to-yellow-400',
+            3: 'from-orange-500 to-orange-400',
+            4: 'from-red-500 to-red-400',
+            5: 'from-purple-500 to-purple-400',
         };
         return colors[level] || colors[1];
     };
@@ -38,7 +38,7 @@ const AQICard = ({ data }) => {
     return (
         <div className="glass-card">
             <h2 className="text-xl font-semibold text-white mb-4">
-                {t("airQuality")}
+                {t('airQuality')}
             </h2>
 
             {/* AQI Main Indicator */}
@@ -51,7 +51,7 @@ const AQICard = ({ data }) => {
                     <div>
                         <div className="text-2xl font-bold">{aqiText}</div>
                         <div className="text-white/80">
-                            {t("aqi")}: {aqi}
+                            {t('aqi')}: {aqi}
                         </div>
                     </div>
                     <div className="text-4xl font-bold">{aqi}</div>
@@ -101,7 +101,7 @@ const AQICard = ({ data }) => {
             {/* Description */}
             <div className="mt-4 p-3 bg-white/5 rounded-lg">
                 <div className="text-sm text-white/80">
-                    {t("aqiDescription")[aqi]}
+                    {t('aqiDescription')[aqi]}
                 </div>
             </div>
         </div>

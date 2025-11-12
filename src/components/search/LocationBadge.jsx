@@ -1,5 +1,5 @@
-import { useLanguage } from "../../contexts/LanguageContext.jsx";
-import { formatDate } from "../../utils/formatters.js";
+import { useLanguage } from '../../contexts/LanguageContext.jsx';
+import { formatDate } from '../../utils/formatters.js';
 
 const LocationBadge = ({ city, date, timezone }) => {
     const { t, language } = useLanguage();

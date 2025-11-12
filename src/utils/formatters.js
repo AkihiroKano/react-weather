@@ -8,8 +8,13 @@ export const formatWindSpeed = (speed, units) => {
         : `${speed.toFixed(1)} mph`
 }
 
-export const formatPressure = (pressure) => {
-    return `${pressure} hPa`
+export const formatPressure = (pressure, units = 'mmhg') => {
+    if (units === 'mmhg') {
+        // Конвертация hPa в mmHg: 1 hPa = 0.750062 mmHg
+        const mmHg = Math.round(pressure * 0.750062);
+        return `${mmHg} mmHg`;
+    }
+    return `${pressure} hPa`;
 }
 
 export const formatHumidity = (humidity) => {

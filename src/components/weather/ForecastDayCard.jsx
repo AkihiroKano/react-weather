@@ -1,29 +1,20 @@
-import { useLanguage } from "../../contexts/LanguageContext.jsx";
-import { useUnits } from "../../contexts/UnitsContext.jsx";
-import {
-    formatTemperature,
-    formatShortDay,
-    getWeatherIconUrl,
-} from "../../utils/formatters.js";
+import { useLanguage } from '../../contexts/LanguageContext.jsx'
+import { useUnits } from '../../contexts/UnitsContext.jsx'
+import { formatTemperature, formatShortDay, getWeatherIconUrl } from '../../utils/formatters.js'
 
 const ForecastDayCard = ({ day, isSelected, onClick }) => {
-    const { t, language } = useLanguage();
-    const { units } = useUnits();
+    const { t, language } = useLanguage()
+    const { units } = useUnits()
 
     return (
         <button
             onClick={onClick}
-            className={`flex flex-col items-center p-3 rounded-xl transition-all duration-200 ${
-                isSelected
-                    ? "bg-blue-500 text-white shadow-lg scale-105"
-                    : "bg-white/10 text-white hover:bg-white/20"
-            }`}
-        >
-            <div
-                className={`font-medium ${
-                    isSelected ? "text-white" : "text-white/80"
+            className={`flex flex-col items-center p-3 rounded-xl transition-all duration-200 ${isSelected
+                ? 'bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-lg scale-105'
+                : 'bg-white/10 text-white hover:bg-white/20'
                 }`}
-            >
+        >
+            <div className={`font-medium ${isSelected ? 'text-white' : 'text-white/80'}`}>
                 {formatShortDay(day.dt, language)}
             </div>
 
@@ -37,16 +28,12 @@ const ForecastDayCard = ({ day, isSelected, onClick }) => {
                 <div className="font-bold text-lg">
                     {formatTemperature(day.temp.max, units)}
                 </div>
-                <div
-                    className={`text-sm ${
-                        isSelected ? "text-white/80" : "text-white/60"
-                    }`}
-                >
+                <div className={`text-sm ${isSelected ? 'text-white/80' : 'text-white/60'}`}>
                     {formatTemperature(day.temp.min, units)}
                 </div>
             </div>
         </button>
-    );
-};
+    )
+}
 
-export default ForecastDayCard;
+export default ForecastDayCard

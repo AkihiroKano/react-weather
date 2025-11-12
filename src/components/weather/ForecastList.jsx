@@ -1,7 +1,7 @@
-import { useState } from "react";
-import ForecastDayCard from "./ForecastDayCard.jsx";
-import HourlyForecastCard from "./HourlyForecastCard.jsx";
-import { useLanguage } from "../../contexts/LanguageContext.jsx";
+import { useState } from 'react';
+import ForecastDayCard from './ForecastDayCard.jsx';
+import HourlyForecastCard from './HourlyForecastCard.jsx';
+import { useLanguage } from '../../contexts/LanguageContext.jsx';
 
 const ForecastList = ({ daily, hourly, timezone }) => {
     const { t } = useLanguage();
@@ -13,7 +13,7 @@ const ForecastList = ({ daily, hourly, timezone }) => {
     return (
         <div className="glass-card">
             <h2 className="text-xl font-semibold text-white mb-4">
-                {t("dailyForecast")}
+                {t('dailyForecast')}
             </h2>
 
             {/* Daily Forecast */}
@@ -32,7 +32,7 @@ const ForecastList = ({ daily, hourly, timezone }) => {
             {selectedDayIndex === 0 && hourlyData.length > 0 && (
                 <>
                     <h3 className="text-lg font-semibold text-white mb-4">
-                        {t("hourlyForecast")}
+                        {t('hourlyForecast')}
                     </h3>
                     <div className="flex overflow-x-auto pb-4 -mx-2 px-2 scrollbar-hide">
                         <div className="flex space-x-3">
